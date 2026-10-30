@@ -20,7 +20,7 @@ permissions:
   actions: write
 jobs:
   build:
-    uses: fucknima/d2r-mobile-build/.github/workflows/pack.yml@main
+    uses: ./.github/workflows/pack.yml
     with:
       prepared_input: ${{ inputs.prepared_input }}
       source_repository: ${{ inputs.source_repository }}

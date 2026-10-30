@@ -33,11 +33,9 @@ jobs:
       SOURCE_REPOSITORY: ${{ inputs.source_repository }}
       GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Resolve the tools revision
+      - name: Pin the tools revision
         id: tools
-        uses: jiayx/d2r-mobile-build/.github/actions/resolve-tools@main
-        with:
-          workflow: pack.yml
+        run: echo "tools_commit=5fcd2f0ec73f8c9f6f58d2f1961b4a1e6362fdfb" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: jiayx/d2r-mobile-build
