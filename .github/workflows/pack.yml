@@ -148,7 +148,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        minimum: ['26.0', '18.0']
+        minimum: ['26.0']   # 只出 iOS 26 安装包（本地改：省一半 macOS runner 排队）
     env:
       INPUT_REVISION: ${{ needs.prepare.outputs.input_revision }}
       GH_TOKEN: ${{ github.token }}
